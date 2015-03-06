@@ -16,7 +16,7 @@ ENV_BUCKET="s3://$ENV_ID"
 echo "Creating Bucket"
 aws s3 mb $ENV_BUCKET
 
-ENV_STATICS=$ENV_DIR/quest01/public/
+ENV_STATICS=$ENV_DIR/devops-aws/quest01/public/
 echo "[$ENV_STATICS]=>[$ENV_BUCKET]"
 aws s3 sync $ENV_STATICS $ENV_BUCKET
 
