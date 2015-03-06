@@ -1,6 +1,6 @@
 #/bin/bash
 
-CLONE_URL=https://github.com/AWSTrainers/devops-aws.git
+CLONE_URL=https://github.com/AWSHubBR/devops-aws.git
 ENV_ID="devops-build-$(date +"%Y-%m-%d-%H-%M-%S")"
 ENV_DIR="$HOME/devops/$ENV_ID"
 
