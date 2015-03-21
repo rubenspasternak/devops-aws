@@ -16,7 +16,7 @@ ENV_BUCKET="s3://$ENV_ID"
 echo "Creating Bucket"
 aws s3 mb $ENV_BUCKET
 
-ENV_STATICS=$ENV_DIR/devops-aws/quest01/public/
+ENV_STATICS=$ENV_DIR/devops-aws/devops-app/public/
 echo "[$ENV_STATICS]=>[$ENV_BUCKET]"
 aws s3 sync $ENV_STATICS $ENV_BUCKET
 
@@ -28,7 +28,7 @@ echo $S3POL >> $ENV_DIR/bucket_policy.json
 aws s3api put-bucket-policy --bucket $ENV_ID  --policy file://$ENV_DIR/bucket_policy.json
 
 echo "### Configuring Website"
-aws s3api put-bucket-website --bucket $ENV_ID --website-configuration '{"IndexDocument":{"Suffix":"index.html"}}'
+aws s3api put-bucket-website --bucket $ENV_ID --website-configuration '{"IndexDocument":{"Suffix":"S02E01.html"}}'
 
 echo "### New Environment Up!"
 echo "http://${ENV_ID}.s3-website-us-east-1.amazonaws.com/"
